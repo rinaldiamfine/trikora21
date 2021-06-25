@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trikora21/game/gameMenu.dart';
 
 class Menu extends StatefulWidget {
   const Menu({Key? key}) : super(key: key);
@@ -14,8 +15,38 @@ class PlaceholderBodyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: color,
+    // return Container(
+    //   color: color,
+    // );
+    return Scaffold(
+      backgroundColor: Color(0xFFF7F8F9),
+      body: Container(
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+              child: FlatButton(
+                  onPressed: () {
+                    runApp(MaterialApp(
+                      title: "Trikora 21",
+                      home: GameMenu(),
+                    ));
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 17.0),
+                    child: Text(
+                      "Lanjut",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.normal),
+                      textAlign: TextAlign.center,
+                    ),
+                  )),
+            )
+          ],
+        ),
+      ),
     );
   }
 }

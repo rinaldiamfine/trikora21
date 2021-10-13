@@ -1,16 +1,26 @@
-# trikora21
+# IHF2021-0a051b5932d0df4a9f37e826962a13de
+Tim - 21015
 
-A new Flutter project.
+## EduRisk
+### Trikora
+### Deskripsi Prototipe:
 
-## Getting Started
+  Project `EduRISK` dikembangkan oleh tim `Trikora` sebagai salah satu platform yang dapat membantu dari segi kesiapsiagaan menghadapi bencana. Berdasarkan data kejadian bencana dibeberapa daerah, banyak korban akibat bencana pada anak usia sekolah, baik jam sekolah maupun diluar jam sekolah. Masalah yang paling sering dihadapi adalah mereka tidak mengetahui sikap apa yang harus dilakukan saat bencana datang atau pasca bencana. Pada hackathon kali ini kami membuat EduRISK sebuah game yang menampilkan karakter anak SMP yang menghadapi situasi gempa tujuannya sebagai media edukasi dan menanamkan sikap bencana gempa ketika terjadi dan setelah kejadian.
 
-This project is a starting point for a Flutter application.
+### Tool yang digunakan:
+  1. Visual Studio Code Universal `versi 1.57.1`
+  2. Sketch `versi 71`
+  
+### SDK yang digunakan:
+1. Dart `2.12.0 < 3.0.0`
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### Aset grafis yang digunakan:
+  1. Generic items License: (CC0 1.0 Universal)  https://www.kenney.nl/assets/generic-items
+  2. Character Design Template: Designed by Freepik https://freepik.com
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Library atau Framework yang digunakan:
+  1. Flutter `versi 2.2.1`
+  
+### Link Poster
+https://www.dropbox.com/s/vdw1wdr71xw9rji/postertrikora.fix.jpg?dl=0

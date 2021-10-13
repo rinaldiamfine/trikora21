@@ -32,6 +32,17 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: "^0.9.0"
+  flutter_native_splash: ^1.2.0
+
+flutter_icons:
+  name: "EduRISK"
+  image_path_ios: "assets/images/favicon.png"
+  image_path_android: "assets/images/favicon.png"
+  ios: true
+  android: true
+  adaptive_icon_background: "assets/images/favicon.png"
+  adaptive_icon_foreground: "assets/images/favicon.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

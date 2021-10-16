@@ -1,4 +1,7 @@
+import 'dart:convert';
+import 'dart:developer' as developer;
 import 'package:flutter/material.dart';
+// import 'package:http/http.dart';
 
 class DailyQuiz extends StatefulWidget {
   const DailyQuiz({Key? key}) : super(key: key);
@@ -8,6 +11,20 @@ class DailyQuiz extends StatefulWidget {
 }
 
 class _DailyQuizState extends State<DailyQuiz> {
+  final url = "https://edurisk.herokuapp.com/api/question";
+  var post = [];
+  // void fetchPost() async {
+  //   try {
+  //     final response = await get(Uri.parse(url));
+  //     final data = jsonDecode(response.body) as List;
+  //     setState(() {
+  //       post = data;
+  //       print(post.toString());
+  //       // developer.log(post.toString(), name: "POST");
+  //     });
+  //   } catch (err) {}
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -8,6 +8,8 @@ class CongratulationQuiz extends StatefulWidget {
 }
 
 class _CongratulationQuizState extends State<CongratulationQuiz> {
+  final correctQuestion = 6;
+
   Size screenSize(BuildContext context) {
     return MediaQuery.of(context).size;
   }
@@ -56,7 +58,8 @@ class _CongratulationQuizState extends State<CongratulationQuiz> {
                   child: Row(
                     children: [
                       Text(
-                        "x pertanyaan berhasil dijawab.",
+                        correctQuestion.toString() +
+                            " pertanyaan berhasil dijawab.",
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: 20,
@@ -68,89 +71,131 @@ class _CongratulationQuizState extends State<CongratulationQuiz> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  padding: const EdgeInsets.all(20.0),
                   child: Align(
-                    child: Container(
-                      width: MediaQuery.of(context).size.height / 3.3,
-                      height: MediaQuery.of(context).size.height / 3.3,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        shape: BoxShape.circle,
-                      ),
+                    child: Column(
+                      children: [
+                        Container(
+                          height: MediaQuery.of(context).size.height / 3.3,
+                          width: MediaQuery.of(context).size.height / 3.3,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Stack(
+                            children: <Widget>[
+                              Positioned(
+                                width: MediaQuery.of(context).size.height / 3.3,
+                                height:
+                                    MediaQuery.of(context).size.height / 3.3,
+                                child: Container(
+                                  margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              "assets/images/thumbsup.png"))),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        // Container(
+                        //   width: MediaQuery.of(context).size.height / 3.3,
+                        //   height: MediaQuery.of(context).size.height / 3.3,
+                        //   alignment: Alignment.center,
+                        //   decoration: BoxDecoration(
+                        //     color: Colors.white,
+                        //     shape: BoxShape.circle,
+                        //   ),
+                        // ),
+                        // Positioned(
+                        //   width: MediaQuery.of(context).size.width,
+                        //   height: MediaQuery.of(context).size.height / 3,
+                        //   child: Container(
+                        //     margin: EdgeInsets.fromLTRB(0, 30, 20, 0),
+                        //     decoration: BoxDecoration(
+                        //         image: DecorationImage(
+                        //             image:
+                        //                 AssetImage("assets/images/rumah.png"))),
+                        //   ),
+                        // ),
+                      ],
                     ),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: Container(
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(16)),
-                    // ignore: deprecated_member_use
-                    child: FlatButton(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 16.0),
-                        child: Text(
-                          "Main Lagi",
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 20,
-                              fontWeight: FontWeight.normal),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                      onPressed: () {},
+                  // ignore: deprecated_member_use
+                  child: FlatButton(
+                    minWidth: MediaQuery.of(context).size.width - 20,
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(
+                          color: Colors.transparent,
+                          width: 1,
+                          style: BorderStyle.solid),
+                      borderRadius: BorderRadius.circular(18),
                     ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 15),
+                      child: Text(
+                        "Main Lagi",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                            fontWeight: FontWeight.normal),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    onPressed: () {},
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   child: Row(
                     children: [
-                      Container(
-                        width: MediaQuery.of(context).size.width / 2 - 30,
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(16)),
-                        // ignore: deprecated_member_use
-                        child: FlatButton(
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 16.0),
-                            child: Text(
-                              "Pilih Game Lain",
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.normal),
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                          onPressed: () {},
+                      // ignore: deprecated_member_use
+                      FlatButton(
+                        minWidth: MediaQuery.of(context).size.width / 2 - 30,
+                        color: Colors.transparent,
+                        shape: RoundedRectangleBorder(
+                          side: BorderSide(
+                              color: Colors.black,
+                              width: 1,
+                              style: BorderStyle.solid),
+                          borderRadius: BorderRadius.circular(18),
                         ),
+                        child: Text(
+                          "Pilih Game Lain",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.normal),
+                          textAlign: TextAlign.center,
+                        ),
+                        onPressed: () {},
                       ),
                       Spacer(),
-                      Container(
-                        width: MediaQuery.of(context).size.width / 2 - 30,
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(16)),
-                        // ignore: deprecated_member_use
-                        child: FlatButton(
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 16.0),
-                            child: Text(
-                              "Halaman Utama",
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.normal),
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                          onPressed: () {},
+                      // ignore: deprecated_member_use
+                      FlatButton(
+                        minWidth: MediaQuery.of(context).size.width / 2 - 30,
+                        color: Colors.transparent,
+                        shape: RoundedRectangleBorder(
+                          side: BorderSide(
+                              color: Colors.black,
+                              width: 1,
+                              style: BorderStyle.solid),
+                          borderRadius: BorderRadius.circular(18),
                         ),
+                        child: Text(
+                          "Halaman Utama",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.normal),
+                          textAlign: TextAlign.center,
+                        ),
+                        onPressed: () {},
                       ),
                     ],
                   ),

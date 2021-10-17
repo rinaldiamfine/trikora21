@@ -41,14 +41,15 @@ class SignIn extends StatelessWidget {
               child: Stack(
                 children: <Widget>[
                   Positioned(
-                      width: width,
-                      height: height / 3,
-                      child: Container(
-                        margin: EdgeInsets.fromLTRB(0, 30, 20, 0),
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage("assets/images/rumah.png"))),
-                      )),
+                    width: width,
+                    height: height / 3,
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(0, 30, 20, 0),
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage("assets/images/rumah.png"))),
+                    ),
+                  ),
                 ],
               ),
             ),

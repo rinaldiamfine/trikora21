@@ -14,9 +14,9 @@ class Routes extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // return Container();
     return Scaffold(
       body: Center(
+        // ignore: deprecated_member_use
         child: FlatButton(
           child: Text("Lets Go!"),
           color: Colors.blue,

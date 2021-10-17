@@ -20,7 +20,8 @@ class PlaceholderBodyWidget extends StatelessWidget {
       return Home();
     } else if (menu == "Akun") {
       // return CongratulationQuiz();
-      return DailyQuiz();
+      // return DailyQuiz();
+      return Scaffold();
     } else {
       return QuizList();
     }

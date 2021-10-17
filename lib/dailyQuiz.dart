@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trikora21/congratulation.dart';
 
 import 'request.dart';
 
@@ -44,7 +45,8 @@ class _DailyQuizState extends State<DailyQuiz> {
                       width: MediaQuery.of(context).size.width,
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 50),
                       child: Column(
                         children: [
                           Padding(
@@ -318,7 +320,13 @@ class _DailyQuizState extends State<DailyQuiz> {
                                     ),
                                   ),
                                 ),
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              CongratulationQuiz()));
+                                },
                               ),
                             ),
                           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trikora21/dailyQuiz.dart';
 import 'package:trikora21/request.dart';
 
 class QuizList extends StatefulWidget {
@@ -70,7 +71,10 @@ class _QuizState extends State<QuizList> {
                               // ignore: deprecated_member_use
                               FlatButton(
                                 onPressed: () {
-                                  print("PRESSED");
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => DailyQuiz()));
                                 },
                                 color: Colors.white,
                                 shape: CircleBorder(

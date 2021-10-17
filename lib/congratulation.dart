@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:trikora21/menu.dart';
+import 'home.dart';
 
 class CongratulationQuiz extends StatefulWidget {
   const CongratulationQuiz({Key? key}) : super(key: key);
@@ -127,7 +129,13 @@ class _CongratulationQuizState extends State<CongratulationQuiz> {
                         textAlign: TextAlign.center,
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => Menu()),
+                          ModalRoute.withName('/'));
+                    },
                   ),
                 ),
                 Padding(
@@ -153,7 +161,13 @@ class _CongratulationQuizState extends State<CongratulationQuiz> {
                               fontWeight: FontWeight.normal),
                           textAlign: TextAlign.center,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushAndRemoveUntil(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) => Menu()),
+                              ModalRoute.withName('/'));
+                        },
                       ),
                       Spacer(),
                       // ignore: deprecated_member_use
@@ -175,7 +189,20 @@ class _CongratulationQuizState extends State<CongratulationQuiz> {
                               fontWeight: FontWeight.normal),
                           textAlign: TextAlign.center,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          // Navigator.of(context).pushAndRemoveUntil(
+                          //     MaterialPageRoute(builder: (context) => Home()),
+                          //     (Route<dynamic> route) => false);
+
+                          // runApp(MaterialApp(
+                          //   home: Home(),
+                          // ));
+                          Navigator.pushAndRemoveUntil(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) => Menu()),
+                              ModalRoute.withName('/'));
+                        },
                       ),
                     ],
                   ),

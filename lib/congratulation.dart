@@ -99,26 +99,6 @@ class _CongratulationQuizState extends State<CongratulationQuiz> {
                             ],
                           ),
                         ),
-                        // Container(
-                        //   width: MediaQuery.of(context).size.height / 3.3,
-                        //   height: MediaQuery.of(context).size.height / 3.3,
-                        //   alignment: Alignment.center,
-                        //   decoration: BoxDecoration(
-                        //     color: Colors.white,
-                        //     shape: BoxShape.circle,
-                        //   ),
-                        // ),
-                        // Positioned(
-                        //   width: MediaQuery.of(context).size.width,
-                        //   height: MediaQuery.of(context).size.height / 3,
-                        //   child: Container(
-                        //     margin: EdgeInsets.fromLTRB(0, 30, 20, 0),
-                        //     decoration: BoxDecoration(
-                        //         image: DecorationImage(
-                        //             image:
-                        //                 AssetImage("assets/images/rumah.png"))),
-                        //   ),
-                        // ),
                       ],
                     ),
                   ),

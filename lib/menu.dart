@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:trikora21/congratulation.dart';
 import 'package:trikora21/dailyQuiz.dart';
-import 'package:trikora21/game/gameMenu.dart';
 import 'package:trikora21/home.dart';
+import 'package:trikora21/quiz.dart';
 
 class Menu extends StatefulWidget {
   const Menu({Key? key}) : super(key: key);
@@ -17,55 +16,20 @@ class PlaceholderBodyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final appBarHeight = MediaQuery.of(context).size.height -
-        ((MediaQuery.of(context).padding.top + kToolbarHeight) +
-            (kBottomNavigationBarHeight));
-    final width = MediaQuery.of(context).size.width;
     if (menu == "Utama") {
       return Home();
     } else if (menu == "Akun") {
-      return CongratulationQuiz();
-      // return DailyQuiz();
+      // return CongratulationQuiz();
+      return DailyQuiz();
     } else {
-      return Scaffold(
-        body: Stack(
-          children: <Widget>[
-            Image(
-              image: AssetImage("assets/images/congratulationBackground.png"),
-              fit: BoxFit.cover,
-              alignment: Alignment.centerRight,
-              width: width,
-            ),
-            Column(
-              children: <Widget>[
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: GridView.builder(
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisSpacing: 5,
-                            crossAxisCount: 2,
-                            mainAxisSpacing: 10,
-                            childAspectRatio: 0.8),
-                        itemBuilder: (context, index) => ListQuiz(
-                              quiz: Quiz(
-                                  id: 1,
-                                  quizName: "ASD",
-                                  quizDescription: "BCD"),
-                            )),
-                  ),
-                ),
-              ],
-            )
-          ],
-        ),
-      );
+      return QuizList();
     }
   }
 }
 
 class _MenuState extends State<Menu> {
   int _currentIndex = 0;
+
   final List<Widget> _children = [
     PlaceholderBodyWidget(
       menu: "Utama",
@@ -103,14 +67,17 @@ class _MenuState extends State<Menu> {
         items: [
           new BottomNavigationBarItem(
             icon: Icon(Icons.home),
+            // ignore: deprecated_member_use
             title: Text('Utama'),
           ),
           new BottomNavigationBarItem(
             icon: Icon(Icons.question_answer_rounded),
+            // ignore: deprecated_member_use
             title: Text('Kuis'),
           ),
           new BottomNavigationBarItem(
             icon: Icon(Icons.person),
+            // ignore: deprecated_member_use
             title: Text('Akun'),
           )
         ],
@@ -118,59 +85,3 @@ class _MenuState extends State<Menu> {
     );
   }
 }
-
-class ListQuiz extends StatelessWidget {
-  final Quiz quiz;
-  // final Function press;
-  const ListQuiz({Key? key, required this.quiz}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.all(10),
-          child: Container(
-            padding: EdgeInsets.all(20),
-            height: 150,
-            width: 150,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              // borderRadius: BorderRadius.circular(18),
-              shape: BoxShape.circle,
-              // shape: BoxShape.circle,
-            ),
-          ),
-        ),
-        Row(
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 5),
-              child: Icon(Icons.check_circle_outline_rounded),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 5),
-              child: Text("The Curious\nPlayer"),
-            ),
-          ],
-        )
-      ],
-    );
-  }
-}
-
-class Quiz {
-  final String quizName, quizDescription;
-  final int id;
-  Quiz({
-    required this.quizName,
-    required this.quizDescription,
-    required this.id,
-  });
-}
-
-List<Quiz> quiz = [
-  Quiz(quizName: "APA", quizDescription: "YOK", id: 1),
-  Quiz(quizName: "APA", quizDescription: "YOK", id: 2)
-];

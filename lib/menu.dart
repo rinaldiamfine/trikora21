@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:trikora21/dailyQuiz.dart';
 import 'package:trikora21/home.dart';
 import 'package:trikora21/quiz.dart';
 
@@ -19,8 +18,6 @@ class PlaceholderBodyWidget extends StatelessWidget {
     if (menu == "Utama") {
       return Home();
     } else if (menu == "Akun") {
-      // return CongratulationQuiz();
-      // return DailyQuiz();
       return Scaffold();
     } else {
       return QuizList();

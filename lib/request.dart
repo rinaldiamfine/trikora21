@@ -19,12 +19,32 @@ Future<List<QuestionCategory>> fetchQuestionCategory() async {
   }
 }
 
-Future<Question> fetchQuestion() async {
-  final response =
-      await http.get(Uri.parse('https://edurisk.herokuapp.com/api/question/1'));
+Future<Question> fetchQuestion(int indexQuery) async {
+  final response = await http.get(Uri.parse(
+      'https://edurisk.herokuapp.com/api/question/?q=' +
+          indexQuery.toString()));
 
   if (response.statusCode == 200) {
-    return Question.fromMap(jsonDecode(response.body));
+    var jsonResponse = jsonDecode(response.body);
+    var sets =
+        (jsonResponse as List).map((e) => new Question.fromMap(e)).toList();
+    return sets[0];
+  } else {
+    throw Exception('Failed to load album');
+  }
+}
+
+Future<List<QuestionAnswer>> fetchQuestionAnswer(int indexQuery) async {
+  final response = await http.get(Uri.parse(
+      'https://edurisk.herokuapp.com/api/question-answer/?q=' +
+          indexQuery.toString()));
+
+  if (response.statusCode == 200) {
+    var jsonResponse = jsonDecode(response.body);
+    var sets = (jsonResponse as List)
+        .map((e) => new QuestionAnswer.fromMap(e))
+        .toList();
+    return sets;
   } else {
     throw Exception('Failed to load album');
   }
@@ -66,6 +86,29 @@ class Question {
       name: json['name'],
       correctAnswer: json['correctAnswer'],
       questionCategory: json['questionCategory'],
+    );
+  }
+}
+
+class QuestionAnswer {
+  final int id;
+  final String name;
+  final String key;
+  final int question_answer;
+
+  QuestionAnswer({
+    required this.id,
+    required this.name,
+    required this.key,
+    required this.question_answer,
+  });
+
+  factory QuestionAnswer.fromMap(Map<String, dynamic> json) {
+    return QuestionAnswer(
+      id: json['id'],
+      name: json['name'],
+      key: json['key'],
+      question_answer: json['question_answer'],
     );
   }
 }

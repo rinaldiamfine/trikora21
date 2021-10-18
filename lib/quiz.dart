@@ -72,9 +72,13 @@ class _QuizState extends State<QuizList> {
                               FlatButton(
                                 onPressed: () {
                                   Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => DailyQuiz()));
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => DailyQuiz(
+                                        indexQuery: snapshot.data![index].id,
+                                      ),
+                                    ),
+                                  );
                                 },
                                 color: Colors.white,
                                 shape: CircleBorder(
@@ -124,8 +128,16 @@ class _QuizState extends State<QuizList> {
                     )
                   ],
                 )
-              : Center(
-                  child: CircularProgressIndicator(),
+              : Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage(
+                            "assets/images/congratulationBackground.png"),
+                        fit: BoxFit.cover),
+                  ),
+                  child: Center(
+                    child: CircularProgressIndicator(),
+                  ),
                 );
         },
       ),
